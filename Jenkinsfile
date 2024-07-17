@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/NikhilChowdhury27/node-starter.git'
+                git branch: 'main', url: 'https://github.com/iam-shubhamjadhav/node-starter.git'
             }
         }
         stage('Install Dependencies') {
@@ -61,12 +61,12 @@ pipeline {
 
     post {
         success {
-            mail to: 'nikhilchowdhury666@gmail.com',
+            mail to: 'shubhamjadhav7781@gmail.com',
                  subject: "Build Success: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
                  body: "The build ${env.JOB_NAME} ${env.BUILD_NUMBER} was successful."
         }
         failure {
-            mail to: 'nikhilchowdhury666@gmail.com',
+            mail to: 'shubhamjadhav7781@gmail.com',
                  subject: "Build Failure: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
                  body: "The build ${env.JOB_NAME} ${env.BUILD_NUMBER} failed."
         }
